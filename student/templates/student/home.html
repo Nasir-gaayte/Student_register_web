@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+        <nav class="navMenu">
+            <div class="nav-item" style="padding: 4rem;">
+                
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'add_student' %}">New Register</a>
+                <a href="{% url 'detail' %}">All Registed Student</a>
+                <a href="#">Search</a>
+                <a href="#">Drop Out</a>
+            </div>
+            <div style="float:right;" class="nav-title">
+                <a href="">ABOUT US</a>
+            </div>
+            <div  class="dot"></div>
+        </nav>
+    </header>
+
+      
+{% block content %}
+
+{% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% comment %} {% extends 'student/home.html' %} {% endcomment %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+{% block content %}
+<div class="uppage">
+    <h1> ALL THE STUDENT IN THE WEB </h1>
+</div>
+<button style="font-weight: 600;
+background-color: aqua;
+width: 19rem;
+height:2rem;
+text-decoration: none;
+"type="submit"><a href="{% url 'home' %}">Home</a> </button>
+    <div style="display: inline-block; background: wighte; margin-top: 20px;">
+        <table class="styled-table">
+            <thead>
+                <th>#</th>
+                <th>Student Name</th>
+                <th>Class Name</th>
+                <th>Address</th>
+                <th>School Name</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                {% for detail in objects %}
+                <tr class="active-row" onclick="window.location = '{% url 'detail_id' detail.id %} ' ">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{detail.name}}</td>
+                    <td>{{detail.s_class}}</td>
+                    <td>{{detail.address}}</td>
+                    <td>{{detail.school_name}}</td>
+                    <td>{{detail.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
+    
