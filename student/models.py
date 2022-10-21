@@ -18,3 +18,7 @@ class StudentModel(models.Model):
     def get_absolute_url(self):
         return reverse("home")
     
+class S_name(models.Model):
+       name = models.CharField(max_length= 255) 
+       
+       

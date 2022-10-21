@@ -8,4 +8,5 @@ urlpatterns = [
     path('detail/',views.AllDetailView.as_view(), name='detail'),
     # path('detail_id/<pk>/',views.AboutStudent.as_view(),name='detail_id'),
     path('detail_id/<int:pk>/',views.aboutstudent,name='detail_id'),
+    path('search/',views.Searchview,name='search'),
 ]
